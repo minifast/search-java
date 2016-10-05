@@ -1,0 +1,8 @@
+pairs:
+  hm: Hadiyah Mujhid; hadiyah
+  dr: Doc Ritezel; doc
+email:
+  prefix: pair
+  domain: ministryofvelocity.com
+  no_solo_prefix: true
+global: false  
