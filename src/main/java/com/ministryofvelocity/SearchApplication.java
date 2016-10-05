@@ -1,20 +1,15 @@
 package com.ministryofvelocity;
 
+import com.ministryofvelocity.domain.KaiserDatasetLoader;
+import com.ministryofvelocity.service.ElasticSearchCredentials;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
-import org.springframework.stereotype.*;
-import org.springframework.web.bind.annotation.*;
 
-@RestController
-@EnableAutoConfiguration
+import java.io.IOException;
+
+@SpringBootApplication
 public class SearchApplication {
-
-	@RequestMapping("/")
-	String home() {
-		return "Hello World!";
-	}
-
-	public static void main(String[] args) {
-		SpringApplication.run(SearchApplication.class, args);
+	public static void main(String[] args) throws Exception {
+        SpringApplication.run(SearchApplication.class, args);
 	}
 }

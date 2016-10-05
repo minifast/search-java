@@ -1,0 +1,4 @@
+---
+applications:
+- name: kaiser-search
+  path: target/search-0.0.1-SNAPSHOT.jar

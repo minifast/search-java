@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>IBM Compose for Elasticsearch for Bluemix Kaiser Permanente Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td style= "width:30%;">
+                <img class = "newappIcon" src="/elasticsearch.svg"/>
+            </td>
+            <td>
+                <h1 id="message">Kaiser Permanente Elasticsearch Example</h1>
+                <h2>Pediatrician Search</h2>
+                <form action="#" th:action="@{/search}" method="get">
+                    <input type="text" name="q" />
+                    <input type="submit" value="Submit" />
+                </form>
+            </td>
+        </tr>
+        <tr th:class="${results} ? show : hidden">
+            <td>
+                <h2>Search Results</h2>
+                <div>
+                    <table id="results">
+                        <col width="10%"/>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th><strong>Name</strong></th>
+                            <th><strong>Address</strong></th>
+                            <th><strong>Languages Spoken</strong></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="doctor : ${results}">
+                                <td><img th:src="${doctor.webPhoto}" class="photo"/></td>
+                                <td th:text="${doctor.providerName}"></td>
+                                <td th:text="${doctor.getAddress()}"></td>
+                                <td th:text="${doctor.getLanguages()}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
